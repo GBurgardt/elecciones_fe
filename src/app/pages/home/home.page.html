@@ -1,0 +1,22 @@
+<ion-content class="btn-container">
+
+    <ion-header class="ion-margin-bottom">
+        <ion-toolbar color="primary">
+            <ion-title>Categoria</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-item class="ion-margin-bottom">
+        <ion-label position="floating">Seleccione una categoria: </ion-label>
+        <ion-select placeholder="Seleccione una">
+            <ion-select-option *ngFor="let c of categorias | async" [value]="c">
+                {{ c.descripcion }}
+            </ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-button expand="full">Continuar</ion-button>
+    
+
+
+
+</ion-content>
