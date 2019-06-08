@@ -22,7 +22,7 @@ export class LoginPage {
         .then(
             resp => {
                 if (resp && resp.length > 0) {
-                    this.router.navigate(['/home'])
+                    this.router.navigate([`/home/${resp[0].id}`])
                 } else {
                     this.alertController.create({
                         header: 'Error',
