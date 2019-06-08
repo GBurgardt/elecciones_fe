@@ -2,17 +2,17 @@
 
     <ion-header class="ion-margin-bottom">
         <ion-toolbar color="primary">
-            <ion-title>Ingreso Tomador Datos</ion-title>
+            <ion-title>Ingreso</ion-title>
         </ion-toolbar>
     </ion-header>
 
 
     <ion-item class="ion-margin-bottom">
-        <ion-label position="floating">Ingrese su DNI: </ion-label>
-        <ion-input></ion-input>
+        <ion-label position="floating">Ingrese su celular: </ion-label>
+        <ion-input [(ngModel)]="celular"></ion-input>
     </ion-item>
 
-    <ion-button expand="full">Continuar</ion-button>
+    <ion-button [disabled]="!celular" (click)="onClickIngresar()" expand="full">Ingresar</ion-button>
     
 
 
