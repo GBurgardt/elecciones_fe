@@ -6,35 +6,75 @@
         </ion-toolbar>
     </ion-header>
 
-    <ion-item class="ion-margin-bottom">
-        <ion-label position="floating">Seleccione una mesa: </ion-label>
-        <ion-select>
-            <ion-select-option *ngFor="let m of mesas | async" [value]="m">
-                {{ m.descripcion }}
-            </ion-select-option>
-        </ion-select>
-    </ion-item>
+
+    <!-- <ion-item-divider> -->
+    <div class="divider">
+        <span>
+            Seleccione mesa y categoria
+        </span>
+    </div>
+
+    <div class="select-container">
+        <ion-item class="ion-margin-bottom">
+            <ion-label position="floating">Seleccione una mesa: </ion-label>
+            <ion-select [(ngModel)]="mesa">
+                <ion-select-option *ngFor="let m of mesas | async" [value]="m">
+                    {{ m.descripcion }}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item class="ion-margin-bottom">
+            <ion-label position="floating">Seleccione una categoria: </ion-label>
+            <ion-select [(ngModel)]="categoria" (ngModelChange)="onChangeCategoria($event)">
+                <ion-select-option *ngFor="let c of categorias | async" [value]="c">
+                    {{ c.descripcion }}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
+    </div>
+
+    <div *ngIf="candidatos | async" class="divider">
+        <span>
+            Ingrese cantidad votos
+        </span>
+    </div>
+
+    <div class="list-container">
+        <ion-list>
+            <ion-item *ngFor="let c of candidatos | async">
+                <ion-label position="floating">
+                    {{ c.nombre }}
+                </ion-label>
+                <ion-input type="number"></ion-input>
+            </ion-item>
+        </ion-list>
+    </div>
+
+    <div *ngIf="true" class="divider">
+        <span>
+            Saque una foto de la planilla
+        </span>
+    </div>
+
 
     <ion-item class="ion-margin-bottom">
-        <ion-label position="floating">Seleccione una categoria: </ion-label>
-        <ion-select>
-            <ion-select-option *ngFor="let c of categorias | async" [value]="c">
-                {{ c.descripcion }}
-            </ion-select-option>
-        </ion-select>
-    </ion-item>
-
-    <ion-item class="ion-margin-bottom">
-        <ion-label position="floating">Ingrese cantidad de votos: </ion-label>
-        <!--  [(ngValue)]="resultado" -->
-        <ion-input type="number"></ion-input>
-
-
+        
+        <ion-button (click)="onClickFoto()">
+            Foto
+        </ion-button>
     </ion-item>
 
 
-    <ion-button expand="full">Confirmar</ion-button>
-    
+
+    <!-- <form submit="test()" method="post" enctype="multipart/form-data">
+        <input type="file" name='photo' placeholder="Select file"/>
+        <br/>
+        <button>Upload</button>
+    </form> -->
+
+    <ion-button (click)="onClickConfirmar()" expand="full">Confirmar</ion-button>
+
 
 
 

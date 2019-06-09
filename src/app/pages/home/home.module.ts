@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { AuthService } from '../../services/auth.service';
+import { CameraService } from '../../services/camera.service';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import { AuthService } from '../../services/auth.service';
     ],
     declarations: [HomePage],
     providers: [
-        AuthService
+        AuthService,
+        CameraService
     ]
 })
 export class HomePageModule { }

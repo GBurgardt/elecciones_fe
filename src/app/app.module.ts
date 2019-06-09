@@ -11,6 +11,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+/**
+ * Ionic 4 providers
+ */
+import { Camera } from '@ionic-native/camera/ngx';
+import { File } from '@ionic-native/file/ngx';
+
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],
@@ -24,7 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
     providers: [
         StatusBar,
         SplashScreen,
-        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+        Camera,
+        File
     ],
     bootstrap: [AppComponent]
 })

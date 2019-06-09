@@ -1,5 +1,7 @@
 {
   "name": "elecciones_fe",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -9,7 +9,7 @@
 
     <ion-item class="ion-margin-bottom">
         <ion-label position="floating">Ingrese su celular: </ion-label>
-        <ion-input [(ngModel)]="celular"></ion-input>
+        <ion-input [(ngModel)]="celular" type="number"></ion-input>
     </ion-item>
 
     <ion-button [disabled]="!celular" (click)="onClickIngresar()" expand="full">Ingresar</ion-button>

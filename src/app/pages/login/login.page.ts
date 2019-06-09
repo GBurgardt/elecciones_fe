@@ -20,7 +20,7 @@ export class LoginPage {
 
     onClickIngresar = () => this.authService.getPuntoMuestralByCelular(this.celular).toPromise()
         .then(
-            resp => {
+            (resp: any) => {
                 if (resp && resp.length > 0) {
                     this.router.navigate([`/home/${resp[0].id}`])
                 } else {
@@ -33,12 +33,14 @@ export class LoginPage {
             }
         )
         .catch(
-            err => 
+            err => {
+                console.log(err)
                 this.alertController.create({
                     header: 'Error',
                     message: 'Error en el servidor',
                     buttons: ['Confirmar']
                 }).then(alert => alert.present())
+            }
             
         )
 
