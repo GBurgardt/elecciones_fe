@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { PuntoMuestral } from 'src/app/models/punto-muestral.model';
+import tiposPuntosMuestrales from 'src/app/constants/tipos-puntos-muestrales';
 
 @Component({
     selector: 'app-login',
@@ -22,7 +24,15 @@ export class LoginPage {
         .then(
             (resp: any) => {
                 if (resp && resp.length > 0) {
-                    this.router.navigate([`/home/${resp[0].id}`])
+
+                    const puntoMuestral: PuntoMuestral = new PuntoMuestral(resp[0]);
+                    
+                    if (puntoMuestral.idTipo === tiposPuntosMuestrales.TD) {
+                        this.router.navigate([`/home/${puntoMuestral.id}`])
+                    } else {
+                        this.router.navigate([`/reportes/${puntoMuestral.id}`])
+                    }
+
                 } else {
                     this.alertController.create({
                         header: 'Error',

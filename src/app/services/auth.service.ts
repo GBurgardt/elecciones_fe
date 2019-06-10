@@ -52,7 +52,7 @@ export class AuthService {
         formData.append('attachment', imgBlob);
         formData.append('mesasCandidatos', JSON.stringify(mesasCandidatos));
 
-        return this.http.post(`${environment.WS_URL}/mesa-candidato/${mesa.id}/${categoria.id}`, formData);
+        return this.http.post(`${environment.WS_URL}/mesa-candidato/${mesa.descripcion}/${categoria.descripcion}`, formData);
     }
 
 

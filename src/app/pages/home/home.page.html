@@ -42,12 +42,18 @@
 
     <div class="list-container">
         <ion-list>
-            <ion-item *ngFor="let mc of mesasCandidatos">
-                <ion-label position="floating">
-                    {{ mc.candidato.nombre }}
-                </ion-label>
-                <ion-input [(ngModel)]="mc.cantidadVotos" type="number"></ion-input>
-            </ion-item>
+            <div class="item-list" [ngStyle]="{ background: mc.candidato.color }" *ngFor="let mc of mesasCandidatos">
+                <div class="item-list-content">
+                    <ion-label [ngStyle]="{ background: mc.candidato.color }" position="floating">
+                        {{ mc.candidato.nombre }}
+                    </ion-label>
+                    <ion-input [(ngModel)]="mc.cantidadVotos" type="number"></ion-input>
+                </div>
+                <div class="item-list-foto">
+                    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Omar_Perotti_2019.png/130px-Omar_Perotti_2019.png" width="93" height="93"> -->
+                    <img [src]="mc.candidato.urlImagen" width="93" height="93">
+                </div>
+            </div>
         </ion-list>
     </div>
 

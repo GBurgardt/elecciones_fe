@@ -18,3 +18,17 @@
     //     padding: 10px;
     // }
 }
+
+
+.item-list {
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+
+    justify-content: space-between;
+
+    .item-list-content {
+        padding-top: 10px;
+        padding-left: 10px;    
+    }
+}

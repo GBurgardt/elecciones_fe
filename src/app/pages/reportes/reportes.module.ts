@@ -3,11 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
-import { HomePage } from './home.page';
-import { AuthService } from '../../services/auth.service';
-import { CameraService } from '../../services/camera.service';
-import { UtilsService } from 'src/app/services/utils.service';
+import { ReportesPage } from './reportes.page';
 
 @NgModule({
     imports: [
@@ -17,15 +13,11 @@ import { UtilsService } from 'src/app/services/utils.service';
         RouterModule.forChild([
             {
                 path: '',
-                component: HomePage
+                component: ReportesPage
             }
         ])
     ],
-    declarations: [HomePage],
-    providers: [
-        AuthService,
-        CameraService,
-        UtilsService
-    ]
+    declarations: [ReportesPage],
+    providers: []
 })
-export class HomePageModule { }
+export class ReportesPageModule { }

@@ -8,6 +8,7 @@ import { CameraService } from 'src/app/services/camera.service';
 import { MesaCandidato } from 'src/app/models/mesa-candidato.model';
 import { map } from 'rxjs/operators';
 import { AlertController } from '@ionic/angular';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
     selector: 'app-home',
@@ -39,7 +40,8 @@ export class HomePage {
         private authService: AuthService,
         private route: ActivatedRoute,
         private cameraService: CameraService,
-        private alertController: AlertController
+        private alertController: AlertController,
+        private utilsService: UtilsService
     ) { }
 
     /**
@@ -96,21 +98,23 @@ export class HomePage {
      */
     onClickConfirmar = () => {
         this.isSubmiting = true;
-        this.authService.postMesasCandidatos(this.mesasCandidatos, this.fileCaptura, this.mesa, this.categoria)
-            .subscribe(
+        this.authService.postMesasCandidatos(this.mesasCandidatos, this.fileCaptura, this.mesa, this.categoria).toPromise()
+            .then(
                 resp => {
-                    this.isSubmiting = false;
-                    this.alertController.create({
-                        header: 'Listo',
-                        message: 'Los votos se cargaron correctamente',
-                        buttons: ['Confirmar']
-                    }).then(
-                        alert => {
-                            alert.present()
-                            this.clearAll();
-                        }
-                    )
+                    this.utilsService.showSuccess()
+                        .then(
+                            resp => {
+                                this.clearAll();
+                                this.isSubmiting = false;
+                            }
+                        )
                 }
+            )
+            .catch(
+                err => this.utilsService.showError(err)
+                    .then(
+                        resp => this.isSubmiting = false
+                    )
             )
     }
 
