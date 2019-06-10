@@ -33,7 +33,9 @@ export class CameraService {
                                             
                                             const reader = new FileReader();
                                             reader.onloadend = function(e) {
-                                                const imgBlob = new Blob([ this.result ], { type: "image/jpeg" } );
+                                                const imgBlob = new Blob([ this.result ],  { 
+                                                    type: "image/jpeg"                                                    
+                                                });
                                                 
                                                 resolve(imgBlob)
                                             };

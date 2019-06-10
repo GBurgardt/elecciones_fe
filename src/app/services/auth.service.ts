@@ -5,6 +5,8 @@ import { Categoria } from '../models/categoria.model';
 import { PuntoMuestral } from '../models/punto-muestral.model';
 import { Mesa } from '../models/mesa.model';
 import { Candidato } from '../models/candidato.model';
+import { MesaCandidato } from '../models/mesa-candidato.model';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthService {
@@ -15,8 +17,9 @@ export class AuthService {
     /**
      * Retorna un Observable con todas las categorias
      */
-    getCategorias = () => this.http.get<Categoria[]>(
-        `${environment.WS_URL}/categoria`
+    getCategoriasByMesaAndPuntoMuestral = (idPuntoMuestral: number, mesa: Mesa) => this.http.get<Categoria[]>(
+        // `${environment.WS_URL}/categoria`
+        `${environment.WS_URL}/punto_muestral/${idPuntoMuestral}/mesas/${mesa.id}/categorias`
     )
 
     /**
@@ -41,15 +44,29 @@ export class AuthService {
     )
 
     /**
-     * Test
+     * Inseta en la db todos los nuevos mesasCandidatos
      */
-    uploadFoto = (imgBlob) => {
+    postMesasCandidatos = (mesasCandidatos: MesaCandidato[], imgBlob, mesa: Mesa, categoria: Categoria) => {
         const formData = new FormData();
 
         formData.append('attachment', imgBlob);
-        
-        return this.http.post(`${environment.WS_URL}/test-upload`, formData);
+        formData.append('mesasCandidatos', JSON.stringify(mesasCandidatos));
+
+        return this.http.post(`${environment.WS_URL}/mesa-candidato/${mesa.id}/${categoria.id}`, formData);
     }
+
+
+
+    // /**
+    //  * Test
+    //  */
+    // uploadFoto = (imgBlob) => {
+    //     const formData = new FormData();
+
+    //     formData.append('attachment', imgBlob);
+
+    //     return this.http.post(`${environment.WS_URL}/test-upload`, formData);
+    // }
 
 }
 

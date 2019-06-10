@@ -17,7 +17,7 @@
     <div class="select-container">
         <ion-item class="ion-margin-bottom">
             <ion-label position="floating">Seleccione una mesa: </ion-label>
-            <ion-select [(ngModel)]="mesa">
+            <ion-select [(ngModel)]="mesa" (ngModelChange)="onChangeMesa($event)">
                 <ion-select-option *ngFor="let m of mesas | async" [value]="m">
                     {{ m.descripcion }}
                 </ion-select-option>
@@ -34,7 +34,7 @@
         </ion-item>
     </div>
 
-    <div *ngIf="candidatos | async" class="divider">
+    <div *ngIf="mesasCandidatos" class="divider">
         <span>
             Ingrese cantidad votos
         </span>
@@ -42,11 +42,11 @@
 
     <div class="list-container">
         <ion-list>
-            <ion-item *ngFor="let c of candidatos | async">
+            <ion-item *ngFor="let mc of mesasCandidatos">
                 <ion-label position="floating">
-                    {{ c.nombre }}
+                    {{ mc.candidato.nombre }}
                 </ion-label>
-                <ion-input type="number"></ion-input>
+                <ion-input [(ngModel)]="mc.cantidadVotos" type="number"></ion-input>
             </ion-item>
         </ion-list>
     </div>
@@ -58,22 +58,17 @@
     </div>
 
 
-    <ion-item class="ion-margin-bottom">
-        
-        <ion-button (click)="onClickFoto()">
-            Foto
+    <div class="btn-camera-container">
+        <ion-button [disabled]="fileCaptura" shape="round" size="large" (click)="onClickFoto()">
+            <ion-icon slot="icon-only" name="camera"></ion-icon>
         </ion-button>
-    </ion-item>
+    </div>
 
-
-
-    <!-- <form submit="test()" method="post" enctype="multipart/form-data">
-        <input type="file" name='photo' placeholder="Select file"/>
-        <br/>
-        <button>Upload</button>
-    </form> -->
-
-    <ion-button (click)="onClickConfirmar()" expand="full">Confirmar</ion-button>
+    <!-- <ion-button [disabled]="!fileCaptura" (click)="onClickConfirmar()" expand="full">Confirmar</ion-button> -->
+    <ion-button *ngIf="!isSubmiting" (click)="onClickConfirmar()" expand="full">Confirmar</ion-button>
+    <ion-button *ngIf="isSubmiting" disabled expand="full">
+        <ion-spinner name="crescent"></ion-spinner>
+    </ion-button>
 
 
 

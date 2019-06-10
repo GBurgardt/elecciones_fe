@@ -4,8 +4,10 @@ import { Categoria } from '../../models/categoria.model';
 import { Observable } from 'rxjs';
 import { Mesa } from 'src/app/models/mesa.model';
 import { ActivatedRoute } from '@angular/router';
-import { Candidato } from 'src/app/models/candidato.model';
 import { CameraService } from 'src/app/services/camera.service';
+import { MesaCandidato } from 'src/app/models/mesa-candidato.model';
+import { map } from 'rxjs/operators';
+import { AlertController } from '@ionic/angular';
 
 @Component({
     selector: 'app-home',
@@ -19,7 +21,6 @@ export class HomePage {
      */
     mesas: Observable<Mesa[]>;
     categorias: Observable<Categoria[]>;
-    candidatos: Observable<Candidato[]>;
     
     /**
      * Seleccionados
@@ -27,12 +28,18 @@ export class HomePage {
     mesa: Mesa;
     categoria: Categoria;
     fileCaptura: any;
-    // fileCaptura: File;
+
+    mesasCandidatos: MesaCandidato[];
+
+    isSubmiting:boolean = false;
+
+    idPuntoMuestral: number;
 
     constructor(
         private authService: AuthService,
         private route: ActivatedRoute,
-        private cameraService: CameraService
+        private cameraService: CameraService,
+        private alertController: AlertController
     ) { }
 
     /**
@@ -40,17 +47,38 @@ export class HomePage {
      */
     ngOnInit() {
         this.route.params.subscribe(
-            params => this.mesas = this.authService.getMesasByPuntoMuestral(params.idPuntoMuestral)
+            params => {
+                this.idPuntoMuestral = params.idPuntoMuestral;
+                this.mesas = this.authService.getMesasByPuntoMuestral(params.idPuntoMuestral)
+            }
         );
 
-        this.categorias = this.authService.getCategorias();
+        // this.categorias = this.authService.getCategorias();
+    }
+
+    onChangeMesa = (m: Mesa) => {
+        this.clearAll(true);
+        this.categorias = this.authService.getCategoriasByMesaAndPuntoMuestral(this.idPuntoMuestral, m);
     }
 
     /**
      * Cargo los candidatos de la categoria seleccionada
+     * Me creo las nuevas mesasCandidatos que voy a mandar
      */
     onChangeCategoria = (c: Categoria) => 
-        this.candidatos = this.authService.getCandidatosByCategoria(c.id)
+        this.authService.getCandidatosByCategoria(c.id)
+            .pipe(
+                map(
+                    candidatos => candidatos
+                        .map (
+                            c => new MesaCandidato({
+                                mesa: this.mesa,
+                                candidato: c
+                            })
+                        )
+                )
+            )
+            .toPromise().then((mcs: MesaCandidato[]) => this.mesasCandidatos = mcs)
 
 
     /**
@@ -67,15 +95,37 @@ export class HomePage {
      * Hago el post a traves de authService
      */
     onClickConfirmar = () => {
-        this.fileCaptura;
-        this.mesa;
-        this.categoria;
-
-        this.authService.uploadFoto(this.fileCaptura)
+        this.isSubmiting = true;
+        this.authService.postMesasCandidatos(this.mesasCandidatos, this.fileCaptura, this.mesa, this.categoria)
             .subscribe(
                 resp => {
-                    // debugger;
+                    this.isSubmiting = false;
+                    this.alertController.create({
+                        header: 'Listo',
+                        message: 'Los votos se cargaron correctamente',
+                        buttons: ['Confirmar']
+                    }).then(
+                        alert => {
+                            alert.present()
+                            this.clearAll();
+                        }
+                    )
                 }
             )
+    }
+
+    clearAll = (excepMesa = false) => {
+        if (excepMesa) {
+            this.mesasCandidatos = null;
+            this.categorias = null;
+            this.fileCaptura = null
+            this.categoria = null;
+        } else {
+            this.mesa = null;
+            this.mesasCandidatos = null;
+            this.categorias = null;
+            this.fileCaptura = null
+            this.categoria = null;
+        }
     }
 }
