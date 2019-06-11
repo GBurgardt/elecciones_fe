@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ReportesPage } from './reportes.page';
+import { AuthService } from 'src/app/services/auth.service';
 
 @NgModule({
     imports: [
@@ -18,6 +19,8 @@ import { ReportesPage } from './reportes.page';
         ])
     ],
     declarations: [ReportesPage],
-    providers: []
+    providers: [
+        AuthService
+    ]
 })
 export class ReportesPageModule { }

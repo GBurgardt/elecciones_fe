@@ -2,10 +2,74 @@
 
     <ion-header class="ion-margin-bottom">
         <ion-toolbar color="primary">
-            <ion-title>Reportes Candidato</ion-title>
+            <ion-title>Resumen de Resultados￼</ion-title>
         </ion-toolbar>
     </ion-header>
 
+    <ion-content id="content">
+
+        <ion-item-divider sticky>
+            <ion-label>
+                Filtros
+            </ion-label>
+
+            <ion-icon class="btn-eye" *ngIf="!showFiltros" (click)="showFiltros = !showFiltros" slot="end" name="eye">
+            </ion-icon>
+            <ion-icon class="btn-eye" *ngIf="showFiltros" (click)="showFiltros = !showFiltros" slot="end"
+                name="eye-off"></ion-icon>
+        </ion-item-divider>
+
+        <div *ngIf="showFiltros" class="filtros-container">
+
+            <ion-item class="ion-margin-bottom">
+                <ion-label position="floating">Seleccione una categoria: </ion-label>
+                <ion-select [(ngModel)]="categoria">
+                    <ion-select-option *ngFor="let c of categorias | async" [value]="c.descripcion">
+                        {{ c.descripcion }}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item class="ion-margin-bottom">
+                <ion-label position="floating">Seleccione una mesa: </ion-label>
+                <ion-select [(ngModel)]="mesa">
+                    <ion-select-option *ngFor="let m of mesas | async" [value]="m.descripcion">
+                        {{ m.descripcion }}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+
+
+            <ion-button (click)="onClickActualizar()" expand="full">
+                Actualizar
+            </ion-button>
+        </div>
+
+        <ion-item-divider sticky>
+            <ion-label>
+                Categoria: {{ categoria }}
+            </ion-label>
+
+            <ion-label slot="end" style="margin-right: 10px;">
+                Mesa: {{ mesa }}
+            </ion-label>
+        </ion-item-divider>
+
+        <div class="resultados-container">
+            <ion-item *ngFor="let r of resultados | async">
+                <ion-avatar slot="start">
+                    <img [src]="r.urlimagen">
+                    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Antonio_Bonfatti_2019.png/130px-Antonio_Bonfatti_2019.png"> -->
+                </ion-avatar>
+                <ion-label>
+                    <h2>{{ r.nombre }}</h2>
+                    <p>{{ r.cantidadvotos }}</p>
+                    <p>12.7273%</p>
+                </ion-label>
+            </ion-item>
+        </div>
+
+    </ion-content>
 
 
 </ion-content>

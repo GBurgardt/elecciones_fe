@@ -6,7 +6,8 @@ import { PuntoMuestral } from '../models/punto-muestral.model';
 import { Mesa } from '../models/mesa.model';
 import { Candidato } from '../models/candidato.model';
 import { MesaCandidato } from '../models/mesa-candidato.model';
-import { Observable } from 'rxjs';
+
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
@@ -42,36 +43,44 @@ export class AuthService {
     getCandidatosByCategoria = (idCategoria: number) => this.http.get<Candidato[]>(
         `${environment.WS_URL}/categoria/${idCategoria}/candidatos`
     )
-
+    
     /**
      * Inseta en la db todos los nuevos mesasCandidatos
      */
     postMesasCandidatos = (mesasCandidatos: MesaCandidato[], imgBlob, mesa: Mesa, categoria: Categoria) => {
         const formData = new FormData();
-
+        
         formData.append('attachment', imgBlob);
         formData.append('mesasCandidatos', JSON.stringify(mesasCandidatos));
-
+        
         return this.http.post(`${environment.WS_URL}/mesa-candidato/${mesa.descripcion}/${categoria.descripcion}`, formData);
     }
+    
+    /**
+     * Retorna un Observable con los resultados (array de candidatos con su porcentaje?)
+     */
+    getResultados = () => this.http.get<any[]>(
+        `${environment.WS_URL}/resultados`
+    )
+    // .pipe(
+    //     map(
+    //         a => {
+    //             debugger;
+    //         }
+    //     )
+    // )
 
+    /**
+     * Retorna TODAS las categorias en un Observable
+     */
+    getAllCategorias = () => this.http.get<Categoria[]>(
+        `${environment.WS_URL}/categorias`
+    )
 
-
-    // /**
-    //  * Test
-    //  */
-    // uploadFoto = (imgBlob) => {
-    //     const formData = new FormData();
-
-    //     formData.append('attachment', imgBlob);
-
-    //     return this.http.post(`${environment.WS_URL}/test-upload`, formData);
-    // }
-
+    /**
+     * Retorna TODAS las mesas en un Observable
+     */
+    getAllMesas = () => this.http.get<Mesa[]>(
+        `${environment.WS_URL}/mesas`
+    )
 }
-
-
-
-
-
-

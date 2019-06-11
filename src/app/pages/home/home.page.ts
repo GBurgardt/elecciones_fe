@@ -40,7 +40,6 @@ export class HomePage {
         private authService: AuthService,
         private route: ActivatedRoute,
         private cameraService: CameraService,
-        private alertController: AlertController,
         private utilsService: UtilsService
     ) { }
 
