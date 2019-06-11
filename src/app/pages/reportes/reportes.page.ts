@@ -21,8 +21,8 @@ export class ReportesPage {
     /**
      * Seleccionados
      */
-    categoria: string = 'Todas'
-    mesa: string = 'Todas'
+    categoria: Categoria;
+    mesa: Mesa;
 
     /**
      * Resultados
@@ -32,7 +32,7 @@ export class ReportesPage {
     /**
      * Otros
      */
-    showFiltros: boolean = true;
+    showFiltros: boolean = false;
 
     constructor(
         private authService: AuthService
@@ -42,13 +42,26 @@ export class ReportesPage {
         this.categorias = this.authService.getAllCategorias();
         this.mesas = this.authService.getAllMesas()
 
-        this.refrescarLista();
+        // Categoria por defecto gobernador
+        this.categorias.toPromise()
+            .then(resp => {
+                this.categoria = resp && resp.length > 0 ? resp[0] : null
+                this.refrescarLista();
+            })
+
     }
     
     /**
      * Refresca lista
      */
     refrescarLista = () => {
-        this.resultados = this.authService.getResultados();
+        this.resultados = this.authService.getResultados(
+            this.categoria ? this.categoria.id : 0, 
+            this.mesa ? this.mesa.id : 0
+        );
+
     }
+
+
+    compareSelect = (c1: Categoria | Mesa, c2: Categoria | Mesa) => c1 && c2 ? c1.id === c2.id : c1 === c2
 }

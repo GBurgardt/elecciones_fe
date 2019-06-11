@@ -5,8 +5,10 @@
 export const environment = {
     production: false,
     // WS_URL: 'http://localhost:3001',
-    WS_URL: 'http://192.168.0.68:3001',
+    // WS_URL: 'http://192.168.0.68:3001',
     // WS_URL: 'http://10.0.0.30:3001',
+    // WS_URL: 'http://192.168.254.115:3001'
+    WS_URL: 'http://200.61.186.213:3001'
 };
 
 /*

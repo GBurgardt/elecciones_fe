@@ -60,8 +60,8 @@ export class AuthService {
     /**
      * Retorna un Observable con los resultados
      */
-    getResultados = () => this.http.get<Resultado[]>(
-        `${environment.WS_URL}/resultados`
+    getResultados = (idCategoria, idMesa) => this.http.get<any[]>(
+        `${environment.WS_URL}/resultados/${idCategoria}/${idMesa}`
     ).pipe(
         map((resp: any) => resp.map(a => new Resultado(a)))
     )

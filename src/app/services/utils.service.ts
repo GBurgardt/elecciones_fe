@@ -17,15 +17,14 @@ export class UtilsService {
         )
     
 
-    showError = (err) => {
-        debugger;
-        return this.alertController.create({
+    showError = (err) => 
+        this.alertController.create({
             header: 'Error',
             message: err.error.body,
             buttons: ['Confirmar']
         }).then(
             alert => alert.present()
         )
-    }
+    
 
 }

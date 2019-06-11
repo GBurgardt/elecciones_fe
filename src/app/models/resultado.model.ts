@@ -1,9 +1,3 @@
-// { descripcion: 'Gobernador',
-//     nombre: 'Total Votos',
-//     Contados: 1578,
-//     Proyectados: 85661,
-//     Porc: 55,
-//     urlimagen: null } ]
 export class Resultado {
     categoriaDescripcion: string;
     candidatoNombre: string;

@@ -23,17 +23,17 @@
 
             <ion-item class="ion-margin-bottom">
                 <ion-label position="floating">Seleccione una categoria: </ion-label>
-                <ion-select [(ngModel)]="categoria" (ngModelChange)="refrescarLista()">
-                    <ion-select-option *ngFor="let c of categorias | async" [value]="c.descripcion">
+                <ion-select [compareWith]="compareSelect" [(ngModel)]="categoria" (ngModelChange)="refrescarLista()">
+                    <ion-select-option *ngFor="let c of categorias | async" [value]="c">
                         {{ c.descripcion }}
                     </ion-select-option>
                 </ion-select>
             </ion-item>
 
             <ion-item class="ion-margin-bottom">
-                <ion-label position="floating" (ngModelChange)="refrescarLista()">Seleccione una mesa: </ion-label>
-                <ion-select [(ngModel)]="mesa">
-                    <ion-select-option *ngFor="let m of mesas | async" [value]="m.descripcion">
+                <ion-label position="floating">Seleccione una mesa: </ion-label>
+                <ion-select [compareWith]="compareSelect" [(ngModel)]="mesa" (ngModelChange)="refrescarLista()">
+                    <ion-select-option *ngFor="let m of mesas | async" [value]="m">
                         {{ m.descripcion }}
                     </ion-select-option>
                 </ion-select>
@@ -43,11 +43,11 @@
 
         <ion-item-divider sticky>
             <ion-label>
-                <span style="font-weight: bolder">Categoria:</span> {{ categoria }}
+                <span style="font-weight: bolder">Categoria:</span> {{ categoria ? categoria.descripcion : 'Todas' }}
             </ion-label>
 
             <ion-label slot="end" style="padding-right: calc(var(--padding-start) + var(--ion-safe-area-left, 0px));">
-                <span style="font-weight: bolder">Mesa:</span> {{ mesa }}
+                <span style="font-weight: bolder">Mesa:</span> {{ mesa ? mesa.descripcion : 'Todas' }}
             </ion-label>
         </ion-item-divider>
 
@@ -58,7 +58,7 @@
                 </ion-avatar>
                 <ion-label>
                     <h2>{{ r.candidatoNombre }}: <span>{{ r.porcentaje }}%</span></h2>
-                    <p>{{ r.contados }} contados</p>
+                    <!-- <p>{{ r.contados }} contados</p> -->
                     <p>{{ r.proyectados }} proyectados</p>
                 </ion-label>
             </ion-item>

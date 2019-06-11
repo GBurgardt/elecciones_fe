@@ -9,6 +9,8 @@ import { MesaCandidato } from 'src/app/models/mesa-candidato.model';
 import { map } from 'rxjs/operators';
 import { AlertController } from '@ionic/angular';
 import { UtilsService } from 'src/app/services/utils.service';
+import candidatosNombres from 'src/app/constants/candidatos-nombres';
+import reglas from 'src/app/constants/reglas';
 
 @Component({
     selector: 'app-home',
@@ -93,28 +95,72 @@ export class HomePage {
     }
 
     /**
+     * Valida datos
+     */
+    validarDatos = () => {
+        // RN: Candidato total votos tiene que ser menor o igual a 350
+        const candidatoTotalVotos = this.mesasCandidatos.find(mc => mc.candidato.nombre === candidatosNombres.TOTAL_VOTOS);
+        if (candidatoTotalVotos.cantidadVotos > reglas.MAX_VOTOS) {
+            this.utilsService.showError({
+                error: {
+                    status: 'error',
+                    body: `Total Votos supera la cantidad máxima permitida: ${reglas.MAX_VOTOS}`
+                }
+            })
+            return false;
+        }
+
+        // RN: Sumatoria cnadidatos exceptuando total votos tiene que ser menor o igual a 350
+        const sumTotalVotos = this.mesasCandidatos
+            .filter(mc => mc.candidato.nombre !== candidatosNombres.TOTAL_VOTOS)
+            .reduce(
+                (acc, mc) => acc + Number(mc.cantidadVotos),
+                0
+            )
+
+        if (sumTotalVotos > reglas.MAX_VOTOS) {
+            this.utilsService.showError({
+                error: {
+                    status: 'error',
+                    body: `La suma de los votos de cada candidato supera la cantidad máxima permitida: ${reglas.MAX_VOTOS}`
+                }
+            })
+            return false
+        }
+
+        return true;
+    }
+
+    /**
      * Hago el post a traves de authService
      */
     onClickConfirmar = () => {
-        this.isSubmiting = true;
-        this.authService.postMesasCandidatos(this.mesasCandidatos, this.fileCaptura, this.mesa, this.categoria).toPromise()
-            .then(
-                resp => {
-                    this.utilsService.showSuccess()
+
+        // Valido datos
+        const datosValidos = this.validarDatos();
+
+        if (datosValidos) {
+
+            this.isSubmiting = true;
+            this.authService.postMesasCandidatos(this.mesasCandidatos, this.fileCaptura, this.mesa, this.categoria).toPromise()
+                .then(
+                    resp => {
+                        this.utilsService.showSuccess()
+                            .then(
+                                resp => {
+                                    this.clearAll();
+                                    this.isSubmiting = false;
+                                }
+                            )
+                    }
+                )
+                .catch(
+                    err => this.utilsService.showError(err)
                         .then(
-                            resp => {
-                                this.clearAll();
-                                this.isSubmiting = false;
-                            }
+                            resp => this.isSubmiting = false
                         )
-                }
-            )
-            .catch(
-                err => this.utilsService.showError(err)
-                    .then(
-                        resp => this.isSubmiting = false
-                    )
-            )
+                )
+        }
     }
 
     clearAll = (excepMesa = false) => {

@@ -50,8 +50,10 @@
                     <ion-input [(ngModel)]="mc.cantidadVotos" type="number"></ion-input>
                 </div>
                 <div class="item-list-foto">
-                    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Omar_Perotti_2019.png/130px-Omar_Perotti_2019.png" width="93" height="93"> -->
-                    <img [src]="mc.candidato.urlImagen" width="93" height="93">
+                    <!-- <img [src]="mc.candidato.urlimagen" width="93" height="93"> -->
+                    <ion-avatar slot="end">
+                        <img [src]="mc.candidato.urlimagen">
+                    </ion-avatar>
                 </div>
             </div>
         </ion-list>
@@ -70,13 +72,10 @@
         </ion-button>
     </div>
 
-    <!-- <ion-button [disabled]="!fileCaptura" (click)="onClickConfirmar()" expand="full">Confirmar</ion-button> -->
-    <ion-button *ngIf="!isSubmiting" (click)="onClickConfirmar()" expand="full">Confirmar</ion-button>
+    
+    <ion-button [disabled]="!fileCaptura" *ngIf="!isSubmiting" (click)="onClickConfirmar()" expand="full">Confirmar</ion-button>
     <ion-button *ngIf="isSubmiting" disabled expand="full">
         <ion-spinner name="crescent"></ion-spinner>
     </ion-button>
-
-
-
 
 </ion-content>
