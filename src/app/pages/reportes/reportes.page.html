@@ -1,6 +1,6 @@
 <ion-content style="margin: 15px">
 
-    <ion-header class="ion-margin-bottom">
+    <ion-header>
         <ion-toolbar color="primary">
             <ion-title>Resumen de Resultados￼</ion-title>
         </ion-toolbar>
@@ -8,7 +8,7 @@
 
     <ion-content id="content">
 
-        <ion-item-divider sticky>
+        <ion-item-divider>
             <ion-label>
                 Filtros
             </ion-label>
@@ -23,7 +23,7 @@
 
             <ion-item class="ion-margin-bottom">
                 <ion-label position="floating">Seleccione una categoria: </ion-label>
-                <ion-select [(ngModel)]="categoria">
+                <ion-select [(ngModel)]="categoria" (ngModelChange)="refrescarLista()">
                     <ion-select-option *ngFor="let c of categorias | async" [value]="c.descripcion">
                         {{ c.descripcion }}
                     </ion-select-option>
@@ -31,7 +31,7 @@
             </ion-item>
 
             <ion-item class="ion-margin-bottom">
-                <ion-label position="floating">Seleccione una mesa: </ion-label>
+                <ion-label position="floating" (ngModelChange)="refrescarLista()">Seleccione una mesa: </ion-label>
                 <ion-select [(ngModel)]="mesa">
                     <ion-select-option *ngFor="let m of mesas | async" [value]="m.descripcion">
                         {{ m.descripcion }}
@@ -39,32 +39,27 @@
                 </ion-select>
             </ion-item>
 
-
-            <ion-button (click)="onClickActualizar()" expand="full">
-                Actualizar
-            </ion-button>
         </div>
 
         <ion-item-divider sticky>
             <ion-label>
-                Categoria: {{ categoria }}
+                <span style="font-weight: bolder">Categoria:</span> {{ categoria }}
             </ion-label>
 
-            <ion-label slot="end" style="margin-right: 10px;">
-                Mesa: {{ mesa }}
+            <ion-label slot="end" style="padding-right: calc(var(--padding-start) + var(--ion-safe-area-left, 0px));">
+                <span style="font-weight: bolder">Mesa:</span> {{ mesa }}
             </ion-label>
         </ion-item-divider>
 
         <div class="resultados-container">
             <ion-item *ngFor="let r of resultados | async">
                 <ion-avatar slot="start">
-                    <img [src]="r.urlimagen">
-                    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Antonio_Bonfatti_2019.png/130px-Antonio_Bonfatti_2019.png"> -->
+                    <img [src]="r.urlImagen">
                 </ion-avatar>
                 <ion-label>
-                    <h2>{{ r.nombre }}</h2>
-                    <p>{{ r.cantidadvotos }}</p>
-                    <p>12.7273%</p>
+                    <h2>{{ r.candidatoNombre }}: <span>{{ r.porcentaje }}%</span></h2>
+                    <p>{{ r.contados }} contados</p>
+                    <p>{{ r.proyectados }} proyectados</p>
                 </ion-label>
             </ion-item>
         </div>

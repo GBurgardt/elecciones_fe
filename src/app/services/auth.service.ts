@@ -8,6 +8,7 @@ import { Candidato } from '../models/candidato.model';
 import { MesaCandidato } from '../models/mesa-candidato.model';
 
 import { map } from 'rxjs/operators';
+import { Resultado } from '../models/resultado.model';
 
 @Injectable()
 export class AuthService {
@@ -57,18 +58,13 @@ export class AuthService {
     }
     
     /**
-     * Retorna un Observable con los resultados (array de candidatos con su porcentaje?)
+     * Retorna un Observable con los resultados
      */
-    getResultados = () => this.http.get<any[]>(
+    getResultados = () => this.http.get<Resultado[]>(
         `${environment.WS_URL}/resultados`
+    ).pipe(
+        map((resp: any) => resp.map(a => new Resultado(a)))
     )
-    // .pipe(
-    //     map(
-    //         a => {
-    //             debugger;
-    //         }
-    //     )
-    // )
 
     /**
      * Retorna TODAS las categorias en un Observable

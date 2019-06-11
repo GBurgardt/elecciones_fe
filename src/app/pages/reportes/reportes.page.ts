@@ -5,6 +5,7 @@ import { Candidato } from 'src/app/models/candidato.model';
 import { Mesa } from 'src/app/models/mesa.model';
 import { Categoria } from 'src/app/models/categoria.model';
 import { ActivatedRoute } from '@angular/router';
+import { Resultado } from 'src/app/models/resultado.model';
 @Component({
     selector: 'app-reportes',
     templateUrl: 'reportes.page.html',
@@ -26,7 +27,7 @@ export class ReportesPage {
     /**
      * Resultados
      */
-    resultados: Observable<any[]>;
+    resultados: Observable<Resultado[]>;
 
     /**
      * Otros
