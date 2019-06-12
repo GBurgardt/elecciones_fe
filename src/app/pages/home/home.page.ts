@@ -9,8 +9,9 @@ import { MesaCandidato } from 'src/app/models/mesa-candidato.model';
 import { map } from 'rxjs/operators';
 import { AlertController } from '@ionic/angular';
 import { UtilsService } from 'src/app/services/utils.service';
-import candidatosNombres from 'src/app/constants/candidatos-nombres';
+import candidatosTipos from 'src/app/constants/candidatos-tipos';
 import reglas from 'src/app/constants/reglas';
+import { Candidato } from 'src/app/models/candidato.model';
 
 @Component({
     selector: 'app-home',
@@ -73,6 +74,9 @@ export class HomePage {
             .pipe(
                 map(
                     candidatos => candidatos
+                        .sort(
+                            (a: Candidato, b: Candidato) => a.candidatoTipo - b.candidatoTipo
+                        )
                         .map (
                             c => new MesaCandidato({
                                 mesa: this.mesa,
@@ -99,7 +103,7 @@ export class HomePage {
      */
     validarDatos = () => {
         // RN: Candidato total votos tiene que ser menor o igual a 350
-        const candidatoTotalVotos = this.mesasCandidatos.find(mc => mc.candidato.nombre === candidatosNombres.TOTAL_VOTOS);
+        const candidatoTotalVotos = this.mesasCandidatos.find(mc => mc.candidato.candidatoTipo === candidatosTipos.TOTAL_VOTOS);
         if (candidatoTotalVotos.cantidadVotos > reglas.MAX_VOTOS) {
             this.utilsService.showError({
                 error: {
@@ -112,7 +116,11 @@ export class HomePage {
 
         // RN: Sumatoria cnadidatos exceptuando total votos tiene que ser menor o igual a 350
         const sumTotalVotos = this.mesasCandidatos
-            .filter(mc => mc.candidato.nombre !== candidatosNombres.TOTAL_VOTOS)
+            .filter(
+                mc => 
+                    mc.candidato.candidatoTipo !== candidatosTipos.TOTAL_VOTOS &&
+                    mc.candidato.candidatoTipo !== candidatosTipos.TOTAL_VOTOS_VALIDO
+            )
             .reduce(
                 (acc, mc) => acc + Number(mc.cantidadVotos),
                 0
