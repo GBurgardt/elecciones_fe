@@ -79,4 +79,14 @@ export class AuthService {
     getAllMesas = () => this.http.get<Mesa[]>(
         `${environment.WS_URL}/mesas`
     )
+
+    /**
+     * Reportar presencia
+     */
+    setRegistroIngreso = (celular: string, newRegistroIngreso: boolean) => this.http.post(
+        `${environment.WS_URL}/punto_muestral/${celular}`,
+        {
+            registroIngreso: newRegistroIngreso ? 1 : 0
+        }
+    )
 }

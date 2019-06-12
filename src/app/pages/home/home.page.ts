@@ -102,8 +102,28 @@ export class HomePage {
      * Valida datos
      */
     validarDatos = () => {
+
+        // Primero compruebo que ningun campo sea nulo, o 0, o texto
+        const camposNulos = this.mesasCandidatos
+            .some(
+                (mc: MesaCandidato) => 
+                    !mc.cantidadVotos ||
+                    mc.cantidadVotos === 0
+            )
+
+        if (camposNulos) {
+            this.utilsService.showError({
+                error: {
+                    status: 'error',
+                    body: `Falta completar algun campo, o alguno es 0`
+                }
+            })
+            return false
+        }
+
         // RN: Candidato total votos tiene que ser menor o igual a 350
         const candidatoTotalVotos = this.mesasCandidatos.find(mc => mc.candidato.candidatoTipo === candidatosTipos.TOTAL_VOTOS);
+        
         if (candidatoTotalVotos.cantidadVotos > reglas.MAX_VOTOS) {
             this.utilsService.showError({
                 error: {
@@ -113,6 +133,7 @@ export class HomePage {
             })
             return false;
         }
+
 
         // RN: Sumatoria cnadidatos exceptuando total votos tiene que ser menor o igual a 350
         const sumTotalVotos = this.mesasCandidatos
@@ -136,6 +157,25 @@ export class HomePage {
             return false
         }
 
+
+        // RN: Candidato Total Votos Valido tiene que ser <= a Total votos, y >= a la suma de los votos de los candidatos
+        const candidatoTotalVotosValido = this.mesasCandidatos.find(mc => mc.candidato.candidatoTipo === candidatosTipos.TOTAL_VOTOS_VALIDO);
+
+        if (
+            candidatoTotalVotosValido.cantidadVotos > candidatoTotalVotos.cantidadVotos ||
+            candidatoTotalVotosValido.cantidadVotos < sumTotalVotos
+        ) {
+            this.utilsService.showError({
+                error: {
+                    status: 'error',
+                    body: `Total Votos Valido tiene que ser menor o igual a Total votos, y mayor o igual a la suma de los votos de los candidatos`
+                }
+            })
+            return false;
+        }
+        
+
+
         return true;
     }
 
@@ -146,6 +186,8 @@ export class HomePage {
 
         // Valido datos
         const datosValidos = this.validarDatos();
+
+        debugger;
 
         if (datosValidos) {
 
@@ -185,4 +227,5 @@ export class HomePage {
             this.categoria = null;
         }
     }
+
 }

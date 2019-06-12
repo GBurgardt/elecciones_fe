@@ -12,7 +12,8 @@
         <ion-input [(ngModel)]="celular" type="number"></ion-input>
     </ion-item>
 
-    <ion-button [disabled]="!celular" (click)="onClickIngresar()" expand="full">Ingresar</ion-button>
+    <ion-button [disabled]="!celular" (click)="onClickReportarPresencia()" expand="block" fill="outline">Reportar Presencia</ion-button>
+    <ion-button [disabled]="!celular" (click)="onClickIngresar()" expand="block">Ingresar</ion-button>
     
 
 

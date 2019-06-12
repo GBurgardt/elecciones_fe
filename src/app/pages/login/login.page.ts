@@ -26,7 +26,7 @@ export class LoginPage {
                 if (resp && resp.length > 0) {
 
                     const puntoMuestral: PuntoMuestral = new PuntoMuestral(resp[0]);
-                    
+
                     if (puntoMuestral.idTipo === tiposPuntosMuestrales.TD) {
                         this.router.navigate([`/home/${puntoMuestral.id}`])
                     } else {
@@ -51,11 +51,83 @@ export class LoginPage {
                     buttons: ['Confirmar']
                 }).then(alert => alert.present())
             }
-            
+
         )
 
-    
+    onClickReportarPresencia = () => this.authService.getPuntoMuestralByCelular(this.celular).toPromise()
+        .then(
+            (resp: any) => {
 
+                const puntoMuestral: PuntoMuestral = new PuntoMuestral(resp[0]);
+                const currentRegistroIngreso = puntoMuestral.registroIngreso;
+
+                // Si el ingreso ya esta ingresado, muestro mensaje
+                if (currentRegistroIngreso) {
+                    this.alertController.create({
+                        header: 'Error',
+                        message: 'Usted ya reporto su presencia',
+                        buttons: ['Confirmar']
+                    }).then(alert => alert.present())
+                } else {
+
+                    this.authService.setRegistroIngreso(this.celular, true).toPromise()
+                        .then(
+                            (resp: any) => 
+                                this.alertController.create({
+                                    header: resp.status,
+                                    message: resp.body,
+                                    buttons: ['Confirmar']
+                                }).then(alert => alert.present())
+                            
+                        )
+                }
+            }
+        )
+        .catch(
+            err => {
+                console.log(err)
+                this.alertController.create({
+                    header: 'Error',
+                    message: 'Error en el servidor',
+                    buttons: ['Confirmar']
+                }).then(alert => alert.present())
+            }
+
+        )
+
+
+    // onClickReportarPresencia = () => {
+
+    //     this.authService.getRegistroIngreso(this.celular).toPromise()
+    //         .then(
+    //             resp => {
+    //                 debugger;
+
+    //                 const currentRegistroIngreso = false;
+    //                 // Si el ingreso ya esta ingresado, muestro mensaje
+    //                 if (currentRegistroIngreso) {
+    //                     this.alertController.create({
+    //                         header: 'Error',
+    //                         message: 'Usted ya reporto su presencia',
+    //                         buttons: ['Confirmar']
+    //                     }).then(alert => alert.present())
+    //                 } else {
+
+    //                     this.authService.setRegistroIngreso(this.celular, true).toPromise()
+    //                         .then(
+    //                             resp => {
+    //                                 this.alertController.create({
+    //                                     header: 'Ok',
+    //                                     message: 'Presencia reportada correctamente',
+    //                                     buttons: ['Confirmar']
+    //                                 }).then(alert => alert.present())
+    //                             }
+    //                         )
+    //                 }
+    //             }
+    //         )
+
+    // }
 
 
 }
