@@ -11,7 +11,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "android:run": "ionic cordova run android",
-    "apk": "adb uninstall com.burgardt.eleccionesapp && npm run android:run"
+    "apk": "adb uninstall com.burgardt.eleccionesapp && npm run android:run",
+    "firmar:apk": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore /home/administrador/Escritorio/elecciones.keystore /home/administrador/Projects/elecciones/elecciones_fe/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk eleccionesapp2 && rm /home/administrador/Escritorio/nueva-version.apk && zipalign -v 4 /home/administrador/Projects/elecciones/elecciones_fe/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk /home/administrador/Escritorio/nueva-version.apk",
+    "generate:signed:apk": "ionic cordova build android --prod --release && npm run firmar:apk"
   },
   "private": true,
   "dependencies": {

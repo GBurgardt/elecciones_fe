@@ -27,10 +27,22 @@ export class LoginPage {
 
                     const puntoMuestral: PuntoMuestral = new PuntoMuestral(resp[0]);
 
-                    if (puntoMuestral.idTipo === tiposPuntosMuestrales.TD) {
-                        this.router.navigate([`/home/${puntoMuestral.id}`])
+                    // 
+                    if (
+                        puntoMuestral.idTipo === tiposPuntosMuestrales.TD &&
+                        !puntoMuestral.registroIngreso
+                    ) {
+                        this.alertController.create({
+                            header: 'Error',
+                            message: 'Antes de ingresar debe reportar su presencia',
+                            buttons: ['Confirmar']
+                        }).then(alert => alert.present())
                     } else {
-                        this.router.navigate([`/reportes/${puntoMuestral.id}`])
+                        if (puntoMuestral.idTipo === tiposPuntosMuestrales.TD) {
+                            this.router.navigate([`/home/${puntoMuestral.id}`])
+                        } else {
+                            this.router.navigate([`/reportes/${puntoMuestral.id}`])
+                        }
                     }
 
                 } else {
