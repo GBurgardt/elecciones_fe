@@ -1068,7 +1068,14 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    WS_URL: 'http://localhost:3001',
+    // WS_URL: 'http://localhost:3001',
+    // WS_URL: 'https://localhost:3001',
+    // WS_URL: 'http://192.168.0.68:3001',
+    // WS_URL: 'http://10.0.0.30:3001',
+    // WS_URL: 'http://192.168.254.115:3001'
+    // WS_URL: 'http://200.61.186.213:3001'
+    WS_URL: 'http://appsantafe.myddns.me:3001'
+    // WS_URL: 'https://appsantafe.myddns.me:3001'
 };
 /*
  * For easier debugging in development mode, you can import the following file

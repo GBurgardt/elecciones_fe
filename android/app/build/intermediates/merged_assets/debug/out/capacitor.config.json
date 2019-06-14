@@ -1,7 +1,0 @@
-{
-  "appId": "io.ionic.starter",
-  "appName": "elecciones_fe",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www"
-}

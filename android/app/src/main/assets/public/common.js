@@ -152,19 +152,22 @@ var AuthService = /** @class */ (function () {
         /**
          * Retorna un Observable el puntoMuestral dado un celular
          */
-        this.getPuntoMuestralByCelular = function (celular) { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/punto_muestral/" + celular, {}, {}).then(function (resp) { return resp.data; }); };
+        this.getPuntoMuestralByCelular = function (celular) { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/punto_muestral/" + celular, {}, {}).then(function (resp) {
+            // debugger;
+            return JSON.parse(resp.data);
+        }); };
         /**
          * Retorna un Observable con todas las categorias
          */
-        this.getCategoriasByMesaAndPuntoMuestral = function (idPuntoMuestral, mesa) { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/punto_muestral/" + idPuntoMuestral + "/mesas/" + mesa.id + "/categorias", {}, {}).then(function (resp) { return resp.data; }); };
+        this.getCategoriasByMesaAndPuntoMuestral = function (idPuntoMuestral, mesa) { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/punto_muestral/" + idPuntoMuestral + "/mesas/" + mesa.id + "/categorias", {}, {}).then(function (resp) { return JSON.parse(resp.data); }); };
         /**
          * Retorna un Observable con todas las mesas de un punto muestral dado
          */
-        this.getMesasByPuntoMuestral = function (idPuntoMuestral) { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/punto_muestral/" + idPuntoMuestral + "/mesas", {}, {}).then(function (resp) { return resp.data; }); };
+        this.getMesasByPuntoMuestral = function (idPuntoMuestral) { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/punto_muestral/" + idPuntoMuestral + "/mesas", {}, {}).then(function (resp) { return JSON.parse(resp.data); }); };
         /**
          * Retorna un Observable los candidatos dada una categoria
          */
-        this.getCandidatosByCategoria = function (idCategoria) { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/categoria/" + idCategoria + "/candidatos", {}, {}).then(function (resp) { return resp.data; }); };
+        this.getCandidatosByCategoria = function (idCategoria) { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/categoria/" + idCategoria + "/candidatos", {}, {}).then(function (resp) { return JSON.parse(resp.data); }); };
         /**
          * Inseta en la db todos los nuevos mesasCandidatos
          */
@@ -172,33 +175,33 @@ var AuthService = /** @class */ (function () {
             var formData = new FormData();
             formData.append('attachment', imgBlob);
             formData.append('mesasCandidatos', JSON.stringify(mesasCandidatos));
-            return _this.http.post(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/mesa-candidato/" + mesa.descripcion + "/" + categoria.descripcion, formData, {}).then(function (resp) { return resp.data; });
+            return _this.http.post(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/mesa-candidato/" + mesa.descripcion + "/" + categoria.descripcion, formData, {}).then(function (resp) { return JSON.parse(resp.data); });
         };
         /**
          * Retorna un Observable con los resultados
          */
         this.getResultados = function (idCategoria, idMesa) { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/resultados/" + idCategoria + "/" + idMesa, {}, {})
-            .then(function (resp) { return resp.data; })
+            .then(function (resp) { return JSON.parse(resp.data); })
             .then(function (resp) { return resp.map(function (a) { return new _models_resultado_model__WEBPACK_IMPORTED_MODULE_3__["Resultado"](a); }); }); };
         /**
          * Retorna TODAS las categorias en un Observable
          */
-        this.getAllCategorias = function () { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/categorias", {}, {}).then(function (resp) { return resp.data; }); };
+        this.getAllCategorias = function () { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/categorias", {}, {}).then(function (resp) { return JSON.parse(resp.data); }); };
         /**
          * Retorna TODAS las mesas en un Observable
          */
-        this.getAllMesas = function () { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/mesas", {}, {}).then(function (resp) { return resp.data; }); };
+        this.getAllMesas = function () { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/mesas", {}, {}).then(function (resp) { return JSON.parse(resp.data); }); };
         /**
          * Reportar presencia
          */
         this.setRegistroIngreso = function (celular, newRegistroIngreso) { return _this.http.post(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/punto_muestral/" + celular, {
             registroIngreso: newRegistroIngreso ? 1 : 0
-        }, {}).then(function (resp) { return resp.data; }); };
+        }, {}).then(function (resp) { return JSON.parse(resp.data); }); };
         /**
          *
          */
         this.getPuntosInformados = function (idCategoria) { return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].WS_URL + "/puntos-informados/" + idCategoria, {}, {})
-            .then(function (resp) { return resp.data; })
+            .then(function (resp) { return JSON.parse(resp.data); })
             .then(function (resp) { return resp && resp.length > 0 ? resp[0][''] : ''; }); };
     }
     AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([

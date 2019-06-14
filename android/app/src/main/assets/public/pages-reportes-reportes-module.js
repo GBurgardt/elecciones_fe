@@ -145,7 +145,7 @@ var ReportesPage = /** @class */ (function () {
         this.categorias = this.authService.getAllCategorias();
         this.authService.getAllMesas().then(function (resp) { return _this.mesas = resp; });
         // Categoria por defecto gobernador
-        this.categorias.toPromise()
+        this.categorias
             .then(function (resp) {
             _this.categoria = resp && resp.length > 0 ? resp[0] : null;
             _this.refrescarLista();

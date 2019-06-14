@@ -155,8 +155,10 @@ var LoginPage = /** @class */ (function () {
         this.alertController = alertController;
         this.onClickIngresar = function () { return _this.authService.getPuntoMuestralByCelular(_this.celular)
             .then(function (resp) {
+            debugger;
             if (resp && resp.length > 0) {
                 var puntoMuestral = new src_app_models_punto_muestral_model__WEBPACK_IMPORTED_MODULE_5__["PuntoMuestral"](resp[0]);
+                debugger;
                 // 
                 if (puntoMuestral.idTipo === src_app_constants_tipos_puntos_muestrales__WEBPACK_IMPORTED_MODULE_6__["default"].TD &&
                     !puntoMuestral.registroIngreso) {
