@@ -1,0 +1,2 @@
+capacitor.android.plugins
+xml camera_provider_paths

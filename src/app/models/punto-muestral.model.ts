@@ -24,5 +24,5 @@ export class PuntoMuestral {
         this.peso = puntoMuestral.peso;
         this.idTipo = puntoMuestral.id_tipo;
         this.registroIngreso = puntoMuestral.registro_ingreso;
-    }
+    };
 }

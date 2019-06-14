@@ -18,7 +18,8 @@ export class ReportesPage {
      * Listas
      */
     mesas: Mesa[];
-    categorias: Observable<Categoria[]>;
+    categorias: any;
+    // categorias: Observable<Categoria[]>;
 
     /**
      * Seleccionados
@@ -29,7 +30,8 @@ export class ReportesPage {
     /**
      * Resultados
      */
-    resultados: Observable<Resultado[]>;
+    resultados: any;
+    // resultados: Observable<Resultado[]>;
     puntosInformadosMsg: string;
 
     /**
@@ -44,10 +46,10 @@ export class ReportesPage {
 
     ngOnInit() {
         this.categorias = this.authService.getAllCategorias();
-        this.authService.getAllMesas().toPromise().then(resp => this.mesas = resp)
+        this.authService.getAllMesas().then((resp: any) => this.mesas = resp)
 
         // Categoria por defecto gobernador
-        this.categorias.toPromise()
+        this.categorias
             .then(resp => {
                 this.categoria = resp && resp.length > 0 ? resp[0] : null
                 this.refrescarLista();
@@ -60,7 +62,7 @@ export class ReportesPage {
      */
     refrescarLista = () => {
 
-        this.authService.getPuntosInformados(this.categoria ? this.categoria.id : 0).toPromise()
+        this.authService.getPuntosInformados(this.categoria ? this.categoria.id : 0)
             .then(
                 resp => {
                     

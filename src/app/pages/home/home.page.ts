@@ -23,8 +23,10 @@ export class HomePage {
     /**
      * Listas
      */
-    mesas: Observable<Mesa[]>;
-    categorias: Observable<Categoria[]>;
+    mesas: any;
+    categorias: any;
+    // mesas: Observable<Mesa[]>;
+    // categorias: Observable<Categoria[]>;
     
     /**
      * Seleccionados
@@ -71,21 +73,19 @@ export class HomePage {
      */
     onChangeCategoria = (c: Categoria) => 
         this.authService.getCandidatosByCategoria(c.id)
-            .pipe(
-                map(
-                    candidatos => candidatos
-                        .sort(
-                            (a: Candidato, b: Candidato) => a.candidatoTipo - b.candidatoTipo
-                        )
-                        .map (
-                            c => new MesaCandidato({
-                                mesa: this.mesa,
-                                candidato: c
-                            })
-                        )
-                )
+            .then(
+                (candidatos: any) => candidatos
+                    .sort(
+                        (a: Candidato, b: Candidato) => a.candidatoTipo - b.candidatoTipo
+                    )
+                    .map (
+                        c => new MesaCandidato({
+                            mesa: this.mesa,
+                            candidato: c
+                        })
+                    )
             )
-            .toPromise().then((mcs: MesaCandidato[]) => this.mesasCandidatos = mcs)
+            .then((mcs: MesaCandidato[]) => this.mesasCandidatos = mcs)
 
 
     /**
@@ -192,7 +192,7 @@ export class HomePage {
         if (datosValidos) {
 
             this.isSubmiting = true;
-            this.authService.postMesasCandidatos(this.mesasCandidatos, this.fileCaptura, this.mesa, this.categoria).toPromise()
+            this.authService.postMesasCandidatos(this.mesasCandidatos, this.fileCaptura, this.mesa, this.categoria)
                 .then(
                     resp => {
                         this.utilsService.showSuccess()

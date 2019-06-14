@@ -20,13 +20,14 @@ export class LoginPage {
         private alertController: AlertController
     ) { }
 
-    onClickIngresar = () => this.authService.getPuntoMuestralByCelular(this.celular).toPromise()
+    onClickIngresar = () => this.authService.getPuntoMuestralByCelular(this.celular)
         .then(
             (resp: any) => {
+                debugger;
                 if (resp && resp.length > 0) {
 
                     const puntoMuestral: PuntoMuestral = new PuntoMuestral(resp[0]);
-
+                    debugger;
                     // 
                     if (
                         puntoMuestral.idTipo === tiposPuntosMuestrales.TD &&
@@ -67,7 +68,7 @@ export class LoginPage {
 
         )
 
-    onClickReportarPresencia = () => this.authService.getPuntoMuestralByCelular(this.celular).toPromise()
+    onClickReportarPresencia = () => this.authService.getPuntoMuestralByCelular(this.celular)
         .then(
             (resp: any) => {
 
@@ -83,7 +84,7 @@ export class LoginPage {
                     }).then(alert => alert.present())
                 } else {
 
-                    this.authService.setRegistroIngreso(this.celular, true).toPromise()
+                    this.authService.setRegistroIngreso(this.celular, true)
                         .then(
                             (resp: any) => 
                                 this.alertController.create({

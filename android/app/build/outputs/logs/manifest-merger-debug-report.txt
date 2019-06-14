@@ -1,0 +1,447 @@
+-- Merging decision tree log ---
+provider#android.support.v4.content.FileProvider
+INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:34:9-42:20
+	android:grantUriPermissions
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:38:13-47
+	android:authorities
+		INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:36:13-64
+	android:exported
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:37:13-37
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:35:13-67
+manifest
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:2:1-63:12
+MERGED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-36:12
+MERGED from [com.android.support:design:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/e6e4f8de443d2c1805b84391e3b11783/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/4a11ae5b76c371cb679d9efd6cb4741e/AndroidManifest.xml:17:1-22:12
+MERGED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-27:12
+MERGED from [com.google.firebase:firebase-messaging:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/9b76cbb3457de1fab6ed65f3e5e1473d/AndroidManifest.xml:17:1-37:12
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:17:1-47:12
+MERGED from [com.google.firebase:firebase-common:17.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2d2740dbcfc1c9eb8123e8c4f954357a/AndroidManifest.xml:2:1-19:12
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/db3944ba9b4be335564f699a83ac2d57/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/6cc32a3b5307ca882329eda32e01590b/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/5b392299fab86f1552531233f525cf67/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2f4634e4697d8e0e27cbd03f9911433c/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/9a5d5471f769969d7dec77193cc45e1a/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/363ec5c98b67df488381baf16b21c1a6/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/077b313e59205b1c2445c2340d25c3a1/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2f1be7a231a005ad5196d34f92343e76/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/f1adbe20dd43cf3eed07759e2c95cb1a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customtabs:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/58a35fc3f5ad653a8c706a8f98c2689a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/039847c84f1fb5000e9978f34981b1bc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/12a9109be0adfe548f7e91ea1ab2bacb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/701363289ea4cc78f53e6b52df8fc94d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/70e394cccb3223641e544bb84a53b6e1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/1b150d1847ce91ad51774af1281c2605/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/0cf04152e262a2e0d3e9313011f6fe2e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/bea9e5547f41078e44bb805407c37102/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/b687eb5bdd675803a0f2fbc4fd0aed6c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/05e4fb1d883064ff1f84229c674ca72d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/1e43099ab1be838862876c01ef07c729/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/58ec85dc33d8d45a7dda131a1ec2cf8e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/4652709e0feb3c271db743f2747c1ec4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/6cf9d851d5a63f775169ccee215b6957/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/73a376a3bf0612946bd913e7e2554c7a/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/630926fe946a5f1b3bff268a4c2ae1bb/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/98e5e420c12a417e35bfe9a894194926/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/f8adda87945cfd81478b1044ce36232c/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/79cfb6db677a73c73863336fc292514a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/575e5a083876f34c2666770921fdccd6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a69b7e63a6af6d8fdd7c03e187e3b605/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/5d8ac0c524022c6ff05db1d4e139ced8/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/dcbdd986f51f6c27876af222bc0cbc5f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/e238d144274db85b0baa93a416990ebf/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/49ff7dd8caecbd5ec5a2e70d1a393e8f/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/e404ca30208428646cf53356f4feba10/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/f3ac5ccab7a9905785c98d498f421bd6/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/61364f5dab1f5ca6fdfdc152e045b24d/AndroidManifest.xml:17:1-22:12
+MERGED from [org.apache.cordova:framework:7.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/186fa97764dbb7d2d07be669d3716d09/AndroidManifest.xml:20:1-27:12
+INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:2:1-63:12
+	package
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:3:5-31
+		INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:2:1-63:12
+		INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:2:1-63:12
+		INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:5:5-43:19
+MERGED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-34:19
+MERGED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-34:19
+MERGED from [com.android.support:design:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/e6e4f8de443d2c1805b84391e3b11783/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/e6e4f8de443d2c1805b84391e3b11783/AndroidManifest.xml:22:5-20
+MERGED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-25:19
+MERGED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-25:19
+MERGED from [com.google.firebase:firebase-messaging:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/9b76cbb3457de1fab6ed65f3e5e1473d/AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-messaging:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/9b76cbb3457de1fab6ed65f3e5e1473d/AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-common:17.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2d2740dbcfc1c9eb8123e8c4f954357a/AndroidManifest.xml:11:5-17:19
+MERGED from [com.google.firebase:firebase-common:17.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2d2740dbcfc1c9eb8123e8c4f954357a/AndroidManifest.xml:11:5-17:19
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/db3944ba9b4be335564f699a83ac2d57/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/db3944ba9b4be335564f699a83ac2d57/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/6cc32a3b5307ca882329eda32e01590b/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/6cc32a3b5307ca882329eda32e01590b/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/5b392299fab86f1552531233f525cf67/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/5b392299fab86f1552531233f525cf67/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2f4634e4697d8e0e27cbd03f9911433c/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2f4634e4697d8e0e27cbd03f9911433c/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/9a5d5471f769969d7dec77193cc45e1a/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/9a5d5471f769969d7dec77193cc45e1a/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/363ec5c98b67df488381baf16b21c1a6/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/363ec5c98b67df488381baf16b21c1a6/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/077b313e59205b1c2445c2340d25c3a1/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/077b313e59205b1c2445c2340d25c3a1/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/73a376a3bf0612946bd913e7e2554c7a/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/73a376a3bf0612946bd913e7e2554c7a/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/630926fe946a5f1b3bff268a4c2ae1bb/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/630926fe946a5f1b3bff268a4c2ae1bb/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/98e5e420c12a417e35bfe9a894194926/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/98e5e420c12a417e35bfe9a894194926/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/630926fe946a5f1b3bff268a4c2ae1bb/AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:11:9-40
+activity#io.ionic.starter.MainActivity
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:13:9-32:20
+	android:label
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:16:13-56
+	android:launchMode
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:18:13-44
+	android:configChanges
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:14:13-90
+	android:theme
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:17:13-62
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:15:13-57
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:20:13-23:29
+action#android.intent.action.MAIN
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:22:27-74
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:@string/custom_url_scheme
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:25:13-30:29
+action#android.intent.action.VIEW
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:26:17-69
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:26:25-66
+category#android.intent.category.DEFAULT
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:27:17-76
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:27:27-73
+category#android.intent.category.BROWSABLE
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:28:17-78
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:28:27-75
+data
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:29:17-68
+	android:scheme
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:29:23-65
+uses-permission#android.permission.INTERNET
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:47:5-67
+MERGED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-67
+MERGED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-67
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:47:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:49:5-79
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:49:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:50:5-81
+MERGED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-81
+MERGED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:50:22-78
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:52:5-81
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:52:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:53:5-79
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:53:22-76
+uses-feature#android.hardware.location.gps
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:54:5-66
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:54:19-63
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:56:5-79
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:56:22-76
+uses-permission#android.permission.CAMERA
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:59:5-65
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:59:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:61:5-71
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:61:22-68
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:62:5-79
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:62:22-77
+uses-sdk
+INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+MERGED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/e6e4f8de443d2c1805b84391e3b11783/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/e6e4f8de443d2c1805b84391e3b11783/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/4a11ae5b76c371cb679d9efd6cb4741e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/4a11ae5b76c371cb679d9efd6cb4741e/AndroidManifest.xml:20:5-44
+MERGED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [com.google.firebase:firebase-messaging:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/9b76cbb3457de1fab6ed65f3e5e1473d/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/9b76cbb3457de1fab6ed65f3e5e1473d/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:17.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2d2740dbcfc1c9eb8123e8c4f954357a/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-common:17.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2d2740dbcfc1c9eb8123e8c4f954357a/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/db3944ba9b4be335564f699a83ac2d57/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/db3944ba9b4be335564f699a83ac2d57/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/6cc32a3b5307ca882329eda32e01590b/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/6cc32a3b5307ca882329eda32e01590b/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/5b392299fab86f1552531233f525cf67/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/5b392299fab86f1552531233f525cf67/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2f4634e4697d8e0e27cbd03f9911433c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2f4634e4697d8e0e27cbd03f9911433c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/9a5d5471f769969d7dec77193cc45e1a/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/9a5d5471f769969d7dec77193cc45e1a/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/363ec5c98b67df488381baf16b21c1a6/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/363ec5c98b67df488381baf16b21c1a6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/077b313e59205b1c2445c2340d25c3a1/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/077b313e59205b1c2445c2340d25c3a1/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2f1be7a231a005ad5196d34f92343e76/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2f1be7a231a005ad5196d34f92343e76/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/f1adbe20dd43cf3eed07759e2c95cb1a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/f1adbe20dd43cf3eed07759e2c95cb1a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/58a35fc3f5ad653a8c706a8f98c2689a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/58a35fc3f5ad653a8c706a8f98c2689a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/039847c84f1fb5000e9978f34981b1bc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/039847c84f1fb5000e9978f34981b1bc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/12a9109be0adfe548f7e91ea1ab2bacb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/12a9109be0adfe548f7e91ea1ab2bacb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/701363289ea4cc78f53e6b52df8fc94d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/701363289ea4cc78f53e6b52df8fc94d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/70e394cccb3223641e544bb84a53b6e1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/70e394cccb3223641e544bb84a53b6e1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/1b150d1847ce91ad51774af1281c2605/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/1b150d1847ce91ad51774af1281c2605/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/0cf04152e262a2e0d3e9313011f6fe2e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/0cf04152e262a2e0d3e9313011f6fe2e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/bea9e5547f41078e44bb805407c37102/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/bea9e5547f41078e44bb805407c37102/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/b687eb5bdd675803a0f2fbc4fd0aed6c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/b687eb5bdd675803a0f2fbc4fd0aed6c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/05e4fb1d883064ff1f84229c674ca72d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/05e4fb1d883064ff1f84229c674ca72d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/1e43099ab1be838862876c01ef07c729/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/1e43099ab1be838862876c01ef07c729/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/58ec85dc33d8d45a7dda131a1ec2cf8e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/58ec85dc33d8d45a7dda131a1ec2cf8e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/4652709e0feb3c271db743f2747c1ec4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/4652709e0feb3c271db743f2747c1ec4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/6cf9d851d5a63f775169ccee215b6957/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/6cf9d851d5a63f775169ccee215b6957/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/73a376a3bf0612946bd913e7e2554c7a/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/73a376a3bf0612946bd913e7e2554c7a/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/630926fe946a5f1b3bff268a4c2ae1bb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/630926fe946a5f1b3bff268a4c2ae1bb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/98e5e420c12a417e35bfe9a894194926/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/98e5e420c12a417e35bfe9a894194926/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/f8adda87945cfd81478b1044ce36232c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/f8adda87945cfd81478b1044ce36232c/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/79cfb6db677a73c73863336fc292514a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/79cfb6db677a73c73863336fc292514a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/575e5a083876f34c2666770921fdccd6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/575e5a083876f34c2666770921fdccd6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a69b7e63a6af6d8fdd7c03e187e3b605/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a69b7e63a6af6d8fdd7c03e187e3b605/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/5d8ac0c524022c6ff05db1d4e139ced8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/5d8ac0c524022c6ff05db1d4e139ced8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/dcbdd986f51f6c27876af222bc0cbc5f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/dcbdd986f51f6c27876af222bc0cbc5f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/e238d144274db85b0baa93a416990ebf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/e238d144274db85b0baa93a416990ebf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/49ff7dd8caecbd5ec5a2e70d1a393e8f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/49ff7dd8caecbd5ec5a2e70d1a393e8f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/e404ca30208428646cf53356f4feba10/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/e404ca30208428646cf53356f4feba10/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/f3ac5ccab7a9905785c98d498f421bd6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/f3ac5ccab7a9905785c98d498f421bd6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/61364f5dab1f5ca6fdfdc152e045b24d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/61364f5dab1f5ca6fdfdc152e045b24d/AndroidManifest.xml:20:5-44
+MERGED from [org.apache.cordova:framework:7.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/186fa97764dbb7d2d07be669d3716d09/AndroidManifest.xml:25:5-44
+MERGED from [org.apache.cordova:framework:7.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/186fa97764dbb7d2d07be669d3716d09/AndroidManifest.xml:25:5-44
+INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/077b313e59205b1c2445c2340d25c3a1/AndroidManifest.xml:23:9-51
+	android:targetSdkVersion
+		INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:39:13-41:64
+	android:resource
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:41:17-51
+	android:name
+		ADDED from /home/burgardt/projects/elecciones_fe/android/app/src/main/AndroidManifest.xml:40:17-67
+uses-feature#android.hardware.camera
+ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-13:36
+	android:required
+		ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-33
+	android:name
+		ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-47
+service#com.getcapacitor.plugin.background.BackgroundTaskService
+ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-18:40
+	android:exported
+		ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-37
+	android:name
+		ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-84
+receiver#com.getcapacitor.plugin.notification.TimedNotificationPublisher
+ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:9-100
+	android:name
+		ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:19-97
+receiver#com.getcapacitor.plugin.notification.NotificationDismissReceiver
+ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:9-101
+	android:name
+		ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:19-98
+meta-data#firebase_messaging_auto_init_enabled
+ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:9-25:37
+	android:value
+		ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:13-34
+	android:name
+		ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-64
+service#com.getcapacitor.CapacitorFirebaseMessagingService
+ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:9-33:19
+	android:stopWithTask
+		ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:29:13-41
+	android:name
+		ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:28:13-78
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:13-32:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:31:17-78
+	android:name
+		ADDED from [:capacitor-android] /home/burgardt/projects/elecciones_fe/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:31:25-75
+provider#org.apache.cordova.camera.FileProvider
+ADDED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-24:20
+	android:grantUriPermissions
+		ADDED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-47
+	android:authorities
+		ADDED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-60
+	android:exported
+		ADDED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-37
+	android:name
+		ADDED from [:capacitor-cordova-android-plugins] /home/burgardt/projects/elecciones_fe/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-66
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/9b76cbb3457de1fab6ed65f3e5e1473d/AndroidManifest.xml:28:9-34:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/9b76cbb3457de1fab6ed65f3e5e1473d/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/9b76cbb3457de1fab6ed65f3e5e1473d/AndroidManifest.xml:29:13-82
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:24:5-68
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:24:22-65
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:26:22-79
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:29:9-35:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:30:13-84
+meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:33:17-96
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:37:9-44:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:39:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:40:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:38:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:41:13-43:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:42:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/a655895a4f28436748b84a34d01cc01e/AndroidManifest.xml:42:25-78
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:17.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2d2740dbcfc1c9eb8123e8c4f954357a/AndroidManifest.xml:12:9-16:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:17.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2d2740dbcfc1c9eb8123e8c4f954357a/AndroidManifest.xml:14:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:17.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2d2740dbcfc1c9eb8123e8c4f954357a/AndroidManifest.xml:15:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:17.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2d2740dbcfc1c9eb8123e8c4f954357a/AndroidManifest.xml:16:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:17.0.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/2d2740dbcfc1c9eb8123e8c4f954357a/AndroidManifest.xml:13:13-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/6cc32a3b5307ca882329eda32e01590b/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/6cc32a3b5307ca882329eda32e01590b/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/6cc32a3b5307ca882329eda32e01590b/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/6cc32a3b5307ca882329eda32e01590b/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/363ec5c98b67df488381baf16b21c1a6/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/363ec5c98b67df488381baf16b21c1a6/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /home/burgardt/.gradle/caches/transforms-2/files-2.1/363ec5c98b67df488381baf16b21c1a6/AndroidManifest.xml:24:13-58
+meta-data#android.support.VERSION
+ADDED from [com.android.support:support-v4:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/077b313e59205b1c2445c2340d25c3a1/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/73a376a3bf0612946bd913e7e2554c7a/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/73a376a3bf0612946bd913e7e2554c7a/AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:support-v4:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/077b313e59205b1c2445c2340d25c3a1/AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:support-v4:26.1.0] /home/burgardt/.gradle/caches/transforms-2/files-2.1/077b313e59205b1c2445c2340d25c3a1/AndroidManifest.xml:27:13-51

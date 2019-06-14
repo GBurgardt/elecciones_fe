@@ -1,0 +1,1 @@
+int xml camera_provider_paths 0x7f180001
