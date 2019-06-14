@@ -73,7 +73,7 @@
     </div>
 
     
-    <ion-button [disabled]="!fileCaptura" *ngIf="!isSubmiting" (click)="onClickConfirmar()" expand="full">Confirmar</ion-button>
+    <ion-button *ngIf="!isSubmiting" (click)="onClickConfirmar()" expand="full">Confirmar</ion-button>
     <ion-button *ngIf="isSubmiting" disabled expand="full">
         <ion-spinner name="crescent"></ion-spinner>
     </ion-button>

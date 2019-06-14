@@ -89,4 +89,16 @@ export class AuthService {
             registroIngreso: newRegistroIngreso ? 1 : 0
         }
     )
+
+    /**
+     * 
+     */
+    getPuntosInformados = (idCategoria: number) => this.http.get(
+        `${environment.WS_URL}/puntos-informados/${idCategoria}`
+    ).pipe(
+        map(
+            (resp: any[]) => resp && resp.length > 0 ? 
+                resp[0][''] : ''
+        )
+    )
 }

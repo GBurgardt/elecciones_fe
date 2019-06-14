@@ -24,9 +24,6 @@
             <ion-item class="ion-margin-bottom">
                 <ion-label position="floating">Seleccione una categoria: </ion-label>
                 <ion-select [compareWith]="compareSelect" [(ngModel)]="categoria" (ngModelChange)="refrescarLista()">
-                    <ion-select-option [value]="null">
-                        Todas
-                    </ion-select-option>
                     <ion-select-option *ngFor="let c of categorias | async" [value]="c">
                         {{ c.descripcion }}
                     </ion-select-option>
@@ -34,15 +31,15 @@
             </ion-item>
 
             <ion-item class="ion-margin-bottom">
-                <ion-label position="floating">Seleccione una mesa: </ion-label>
-                <ion-select [compareWith]="compareSelect" [(ngModel)]="mesa" (ngModelChange)="refrescarLista()">
-                    <ion-select-option [value]="null">
-                        Todas
-                    </ion-select-option>
-                    <ion-select-option *ngFor="let m of mesas | async" [value]="m">
-                        {{ m.descripcion }}
-                    </ion-select-option>
-                </ion-select>
+                <ion-label position="floating">Filtrar por mesa: </ion-label>
+
+                <ion-input #inputMesa type="number"></ion-input>
+                <ion-button (click)="onClickBuscarPorMesa(inputMesa)" slot="end">
+                    <ion-icon slot="icon-only" name="search"></ion-icon>
+                </ion-button>
+                <ion-button (click)="onClickMesasTodas()" slot="end" fill="outline">
+                    Todas
+                </ion-button>
             </ion-item>
 
         </div>
@@ -73,3 +70,11 @@
 
 
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-title>
+            {{ puntosInformadosMsg }}
+        </ion-title>
+    </ion-toolbar>
+</ion-footer>

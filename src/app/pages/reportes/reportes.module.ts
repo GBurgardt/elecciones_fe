@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ReportesPage } from './reportes.page';
 import { AuthService } from 'src/app/services/auth.service';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @NgModule({
     imports: [
@@ -20,7 +21,8 @@ import { AuthService } from 'src/app/services/auth.service';
     ],
     declarations: [ReportesPage],
     providers: [
-        AuthService
+        AuthService,
+        UtilsService
     ]
 })
 export class ReportesPageModule { }

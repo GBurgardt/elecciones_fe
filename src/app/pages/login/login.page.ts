@@ -56,10 +56,11 @@ export class LoginPage {
         )
         .catch(
             err => {
-                console.log(err)
+                // console.log(err.message)
+                // debugger;
                 this.alertController.create({
                     header: 'Error',
-                    message: 'Error en el servidor',
+                    message: err.message,
                     buttons: ['Confirmar']
                 }).then(alert => alert.present())
             }
@@ -107,39 +108,7 @@ export class LoginPage {
 
         )
 
-
-    // onClickReportarPresencia = () => {
-
-    //     this.authService.getRegistroIngreso(this.celular).toPromise()
-    //         .then(
-    //             resp => {
-    //                 debugger;
-
-    //                 const currentRegistroIngreso = false;
-    //                 // Si el ingreso ya esta ingresado, muestro mensaje
-    //                 if (currentRegistroIngreso) {
-    //                     this.alertController.create({
-    //                         header: 'Error',
-    //                         message: 'Usted ya reporto su presencia',
-    //                         buttons: ['Confirmar']
-    //                     }).then(alert => alert.present())
-    //                 } else {
-
-    //                     this.authService.setRegistroIngreso(this.celular, true).toPromise()
-    //                         .then(
-    //                             resp => {
-    //                                 this.alertController.create({
-    //                                     header: 'Ok',
-    //                                     message: 'Presencia reportada correctamente',
-    //                                     buttons: ['Confirmar']
-    //                                 }).then(alert => alert.present())
-    //                             }
-    //                         )
-    //                 }
-    //             }
-    //         )
-
+    // onClickYoutube = () => {
+    //     this.router.navigate([`https://www.youtube.com/watch?v=aYOXFNVpkSc&feature=youtu.be`])
     // }
-
-
 }
