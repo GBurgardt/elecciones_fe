@@ -23,10 +23,10 @@ export class HomePage {
     /**
      * Listas
      */
-    mesas: any;
-    categorias: any;
-    // mesas: Observable<Mesa[]>;
-    // categorias: Observable<Categoria[]>;
+    // mesas: any;
+    // categorias: any;
+    mesas: Observable<Mesa[]>;
+    categorias: Observable<Categoria[]>;
     
     /**
      * Seleccionados
@@ -72,7 +72,7 @@ export class HomePage {
      * Me creo las nuevas mesasCandidatos que voy a mandar
      */
     onChangeCategoria = (c: Categoria) => 
-        this.authService.getCandidatosByCategoria(c.id)
+        this.authService.getCandidatosByCategoria(c.id).toPromise()
             .then(
                 (candidatos: any) => candidatos
                     .sort(
@@ -192,7 +192,7 @@ export class HomePage {
         if (datosValidos) {
 
             this.isSubmiting = true;
-            this.authService.postMesasCandidatos(this.mesasCandidatos, this.fileCaptura, this.mesa, this.categoria)
+            this.authService.postMesasCandidatos(this.mesasCandidatos, this.fileCaptura, this.mesa, this.categoria).toPromise()
                 .then(
                     resp => {
                         this.utilsService.showSuccess()
