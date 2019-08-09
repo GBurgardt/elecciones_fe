@@ -187,7 +187,7 @@ export class HomePage {
         // Valido datos
         const datosValidos = this.validarDatos();
 
-        debugger;
+        
 
         if (datosValidos) {
 

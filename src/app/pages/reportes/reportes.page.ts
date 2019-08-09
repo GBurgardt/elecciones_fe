@@ -112,6 +112,5 @@ export class ReportesPage {
         }
     }
 
-
     compareSelect = (c1: Categoria | Mesa, c2: Categoria | Mesa) => c1 && c2 ? c1.id === c2.id : c1 === c2
 }

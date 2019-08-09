@@ -3,6 +3,13 @@
     <ion-header>
         <ion-toolbar color="primary">
             <ion-title>Resumen de Resultados￼</ion-title>
+            <ion-buttons slot="primary">
+                <ion-button (click)="refrescarLista()">
+                    <ion-icon
+                        name="refresh">
+                    </ion-icon>
+                </ion-button>
+            </ion-buttons>
         </ion-toolbar>
     </ion-header>
 
@@ -61,7 +68,8 @@
                 </ion-avatar>
                 <ion-label>
                     <h2>{{ r.candidatoNombre }}: <span>{{ r.porcentaje }}%</span></h2>
-                    <p>{{ r.proyectados }} proyectados</p>
+                    <!-- <p>{{ r.proyectados }} proyectados</p> -->
+                    <p>{{ r.proyectados }} votos</p>
                 </ion-label>
             </ion-item>
         </div>
